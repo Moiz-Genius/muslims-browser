@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muslim's Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="title-bar">
+        <div id="tabs-container">
+            <!-- Tabs will be dynamically added here -->
+            <div class="tab active" data-id="1">
+                <span class="tab-title">New Tab</span>
+                <span class="tab-close">×</span>
+            </div>
+            <button id="new-tab-btn">+</button>
+        </div>
+        <div id="window-controls">
+            <!-- Custom window controls if frameless (optional) -->
+        </div>
+    </div>
+
+    <div id="nav-bar">
+        <button id="back-btn" disabled>←</button>
+        <button id="forward-btn" disabled>→</button>
+        <button id="reload-btn">↻</button>
+        <div id="url-container">
+            <input type="text" id="url-input" placeholder="Search or enter address">
+        </div>
+        <button id="menu-btn">⋮</button>
+    </div>
+
+    <!-- BrowserView content will be rendered below this -->
+    <script src="renderer.js"></script>
+</body>
+
+</html>

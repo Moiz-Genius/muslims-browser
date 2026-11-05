@@ -1,0 +1,202 @@
+:root {
+    --bg-color: #1a1b1e;
+    /* Deep dark grey */
+    --text-color: #e0e0e0;
+    --accent-color: #2ecc71;
+    /* Emerald Green */
+    --accent-gold: #f1c40f;
+    /* Gold for highlights */
+    --tab-bg: #25262b;
+    --tab-active-bg: #0b3d25;
+    /* Deep Green */
+    --tab-hover-bg: #2c2e33;
+    --toolbar-bg: #25262b;
+    --input-bg: #141517;
+    --border-color: #2ecc71;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    /* Hide scrollbars on main window as content is in BrowserView */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    will-change: transform;
+    /* Hint for GPU enhancement */
+}
+
+#title-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--tab-bg);
+    height: 40px;
+    padding-left: 10px;
+    /* Simulate draggable region for frameless window */
+    -webkit-app-region: drag;
+}
+
+#tabs-container {
+    display: flex;
+    flex: 1;
+    overflow-x: auto;
+    -webkit-app-region: no-drag;
+    /* Allow clicking tabs */
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-right: 2px;
+    background-color: var(--tab-bg);
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
+    max-width: 200px;
+    min-width: 100px;
+    position: relative;
+    contain: content;
+    /* Rendering optimization */
+}
+
+.tab.active {
+    background-color: var(--tab-active-bg);
+    color: var(--accent-gold);
+    border-top: 2px solid var(--accent-gold);
+    z-index: 2;
+}
+
+.tab:hover:not(.active) {
+    background-color: var(--tab-hover-bg);
+}
+
+.tab-title {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.tab-close {
+    margin-left: 8px;
+    padding: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.tab:hover .tab-close {
+    opacity: 1;
+}
+
+.tab-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#new-tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+    -webkit-app-region: no-drag;
+}
+
+#new-tab-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+#nav-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--toolbar-bg);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-color);
+    height: 40px;
+    /* Consistent height */
+}
+
+button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: background-color 0.2s;
+    font-size: 16px;
+}
+
+button:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#url-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg);
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin: 0 8px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#url-container:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+    /* Green glow */
+    background-color: #fff;
+}
+
+#url-input {
+    width: 100%;
+    border: none;
+    background: none;
+    color: var(--text-color);
+    outline: none;
+    font-size: 14px;
+}
+
+#url-container:focus-within #url-input {
+    color: #202124;
+    /* Dark text on light background on focus */
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5f6368;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #75797e;
+}
