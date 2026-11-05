@@ -1,9 +1,10 @@
 # 🌐 Muslim's Browser
 
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Electron](https://img.shields.io/badge/Electron-40.x-47848F.svg?logo=electron)](https://www.electronjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen.svg?logo=node.js)](https://nodejs.org/)
 [![Build Tool](https://img.shields.io/badge/Packaged%20with-Electron%20Forge-blue.svg)](https://www.electronforge.io/)
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Moiz-Genius/muslims-browser/pulls)
 
 A modern, fast, and privacy-focused desktop web browser built with [Electron](https://www.electronjs.org/) and [Electron Forge](https://www.electronforge.io/). Engineered for lightning-fast browsing speeds with hardware-accelerated Chromium flags, zero-overhead C++ level ad blocking, isolated multi-tab BrowserViews, and strict telemetry stripping.

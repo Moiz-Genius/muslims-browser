@@ -9,7 +9,7 @@
     "make": "electron-forge make"
   },
   "keywords": [],
-  "author": "",
+  "author": "Muhammad Moiz",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
